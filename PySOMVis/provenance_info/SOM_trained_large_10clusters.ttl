@@ -1,0 +1,50 @@
+@prefix ex: <http://example/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:SOM a prov:Entity ;
+    prov:wasAttributedTo ex:user ;
+    prov:wasGeneratedBy ex:SOMTraining .
+
+ex:SOMTraining a prov:Activity ;
+    ex:activation_distance "cosine"^^xsd:string ;
+    ex:input_len "10"^^xsd:int ;
+    ex:learning_rate 5e-01,
+        "1"^^xsd:int ;
+    ex:n_iter "100000"^^xsd:int ;
+    ex:name "large_10clusters"^^xsd:string,
+        "small_10clusters"^^xsd:string ;
+    ex:neighborhood_function "gaussian"^^xsd:string ;
+    ex:sigma "1"^^xsd:int,
+        "3"^^xsd:int ;
+    ex:topology "rectangular"^^xsd:string ;
+    ex:x "10"^^xsd:int,
+        "100"^^xsd:int ;
+    ex:y "10"^^xsd:int,
+        "60"^^xsd:int ;
+    prov:endedAtTime "2025-01-29T08:41:30.875987"^^xsd:dateTime,
+        "2025-01-29T08:43:34.361784"^^xsd:dateTime ;
+    prov:startedAtTime "2025-01-29T08:41:23.097133"^^xsd:dateTime,
+        "2025-01-29T08:42:02.547722"^^xsd:dateTime ;
+    prov:used ex:dataset,
+        ex:repository ;
+    prov:wasAssociatedWith prov:SoftwareAgent .
+
+ex:dataset a prov:Entity,
+        "prov:Dataset"^^xsd:string ;
+    rdfs:label "10 clusters"^^xsd:string ;
+    prov:value "/datasets/10clusters"^^xsd:string .
+
+ex:repository a prov:Entity,
+        "prov:Repository"^^xsd:string ;
+    rdfs:label "GitHub Repository"^^xsd:string ;
+    ex:description "This is a fork of the repository implementing the PySOMVis tool. This version adds a new type of visualization - the LabelSOM. "^^xsd:string ;
+    prov:value "https://github.com/teriolx/PySOMVis-LabelSOM"^^xsd:string .
+
+ex:user a prov:Agent,
+        "prov:Person"^^xsd:string ;
+    ex:name "Terezia"^^xsd:string .
+
+prov:SoftwareAgent a prov:Agent .
+
