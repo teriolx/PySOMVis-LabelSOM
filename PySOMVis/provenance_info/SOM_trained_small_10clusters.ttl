@@ -18,8 +18,13 @@ ex:SOMTraining a prov:Activity ;
     ex:topology "rectangular"^^xsd:string ;
     ex:x "10"^^xsd:int ;
     ex:y "10"^^xsd:int ;
+<<<<<<< HEAD
     prov:endedAtTime "2025-01-28T11:30:07.575927"^^xsd:dateTime ;
     prov:startedAtTime "2025-01-28T11:29:54.617428"^^xsd:dateTime ;
+=======
+    prov:endedAtTime "2025-01-29T08:41:30.875987"^^xsd:dateTime ;
+    prov:startedAtTime "2025-01-29T08:41:23.097133"^^xsd:dateTime ;
+>>>>>>> Johannes-Edits
     prov:used ex:dataset,
         ex:repository ;
     prov:wasAssociatedWith prov:SoftwareAgent .
